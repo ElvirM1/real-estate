@@ -61,8 +61,9 @@ export function Footer() {
                   <Link
                     href={link.href}
                     className="text-sm text-gray-500 hover:text-white transition-colors duration-200"
+                    suppressHydrationWarning
                   >
-                    {link.label}
+                    <span suppressHydrationWarning>{link.label}</span>
                   </Link>
                 </li>
               ))}

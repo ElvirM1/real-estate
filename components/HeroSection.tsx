@@ -20,7 +20,7 @@ export function HeroSection({ listingCount = 0 }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative min-h-[70vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <Image
         src="/Home-Image.png"
@@ -28,7 +28,7 @@ export function HeroSection({ listingCount = 0 }: HeroSectionProps) {
         fill
         priority
         quality={90}
-        className="object-cover object-[center_30%] sm:object-center"
+        className="object-cover object-[50%_20%] sm:object-center"
         sizes="100vw"
       />
 
@@ -36,7 +36,7 @@ export function HeroSection({ listingCount = 0 }: HeroSectionProps) {
       <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/35 to-black/75" />
 
       {/* Content — stagger via animation-delay */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-20 sm:pt-0">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/90 text-xs font-semibold px-4 py-2 rounded-full mb-8 backdrop-blur-sm tracking-wide uppercase animate-fade-in">
           <HiSparkles className="w-3.5 h-3.5 text-blue-300" />
