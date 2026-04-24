@@ -116,7 +116,8 @@ export default function ListingDetailPage() {
                 {listing.createdAt && (
                   <span className="flex items-center gap-1.5 text-sm text-gray-400">
                     <HiCalendar className="w-4 h-4" />
-                    {t("listings.postedOn")} {formatTimestamp(listing.createdAt)}
+                    {t("listings.postedOn")}{" "}
+                    {formatTimestamp(listing.createdAt)}
                   </span>
                 )}
               </div>

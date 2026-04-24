@@ -20,7 +20,7 @@ export function HeroSection({ listingCount = 0 }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
       {/* Background image */}
       <Image
         src="/Home-Image.png"
@@ -28,12 +28,12 @@ export function HeroSection({ listingCount = 0 }: HeroSectionProps) {
         fill
         priority
         quality={90}
-        className="object-cover object-center"
+        className="object-contain sm:object-cover object-center"
         sizes="100vw"
       />
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/35 to-black/75" />
+      {/* Gradient overlay — uniform on mobile (contains image), cinematic on desktop */}
+      <div className="absolute inset-0 bg-black/55 sm:bg-gradient-to-b sm:from-black/65 sm:via-black/35 sm:to-black/75" />
 
       {/* Content — stagger via animation-delay */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
