@@ -22,10 +22,20 @@ const app: FirebaseApp =
   getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 
 // ─── Services ─────────────────────────────────────────────────────────────────
-// getAuth / getFirestore / getStorage are safe to call on both server and
-// client when the app is already initialised.  Auth on the server just won't
-// have a persisted session, but it won't throw unless the apiKey is missing.
-export const auth: Auth = getAuth(app);
-export const db: Firestore = getFirestore(app);
-export const storage: FirebaseStorage = getStorage(app);
+// Guard: only call getAuth/getFirestore/getStorage when the API key is present.
+// During Next.js static prerendering (e.g. /_not-found) NEXT_PUBLIC_ vars may
+// be absent on the Vercel build server.  All real usages live inside
+// "use client" components / useEffect hooks, so undefined is never reached
+// at actual runtime.
+const configured = !!firebaseConfig.apiKey;
+
+export const auth: Auth = configured
+  ? getAuth(app)
+  : (undefined as unknown as Auth);
+export const db: Firestore = configured
+  ? getFirestore(app)
+  : (undefined as unknown as Firestore);
+export const storage: FirebaseStorage = configured
+  ? getStorage(app)
+  : (undefined as unknown as FirebaseStorage);
 export default app;
