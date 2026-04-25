@@ -123,10 +123,10 @@ export default function ListingFilters({
           </div>
         </div>
 
-        {/* Mobile: stacked rows */}
+        {/* Mobile: compact single-line layout */}
         <div className="lg:hidden divide-y divide-gray-100">
           {/* Search */}
-          <div className="flex items-center px-4 gap-3">
+          <div className="flex items-center px-4 py-2 gap-3">
             <svg
               className="shrink-0 h-4 w-4 text-gray-400"
               fill="none"
@@ -142,18 +142,19 @@ export default function ListingFilters({
               placeholder={t("listings.filter.search")}
               value={filters.keyword}
               onChange={(e) => setFilter("keyword", e.target.value)}
-              className={FIELD}
+              className="h-9 w-full bg-transparent text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none"
             />
           </div>
 
-          {/* Type pills */}
-          <div className="flex items-center gap-2 px-4 py-3">
+          {/* Horizontally scrollable filter row */}
+          <div className="flex overflow-x-auto whitespace-nowrap gap-2 px-3 py-2 scrollbar-hide">
+            {/* Type pills */}
             {TYPE_OPTIONS.map((o) => (
               <button
                 key={o.value}
                 type="button"
                 onClick={() => setFilter("type", o.value)}
-                className={`flex-1 h-9 rounded-full text-sm font-medium transition-all ${
+                className={`shrink-0 h-8 rounded-full px-3 text-xs font-medium transition-all ${
                   filters.type === o.value
                     ? "bg-blue-600 text-white shadow-sm"
                     : "border border-gray-200 text-gray-500 hover:border-blue-300 hover:text-blue-600"
@@ -162,36 +163,29 @@ export default function ListingFilters({
                 {o.label}
               </button>
             ))}
-          </div>
 
-          {/* Category + Location side by side */}
-          <div className="grid grid-cols-2 divide-x divide-gray-100">
-            <div className="flex items-center px-4">
-              <select
-                value={filters.category}
-                onChange={(e) => setFilter("category", e.target.value)}
-                className={
-                  FIELD +
-                  " cursor-pointer appearance-none pr-5 bg-[url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E\")] bg-[length:16px] bg-no-repeat bg-[right_0px_center]"
-                }
-              >
-                <option value="">{t("listings.filter.category")}</option>
-                {LISTING_CATEGORIES.map((c) => (
-                  <option key={c} value={c}>
-                    {c}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="flex items-center px-4">
-              <input
-                type="text"
-                placeholder={t("listings.filter.location")}
-                value={filters.location}
-                onChange={(e) => setFilter("location", e.target.value)}
-                className={FIELD}
-              />
-            </div>
+            {/* Category */}
+            <select
+              value={filters.category}
+              onChange={(e) => setFilter("category", e.target.value)}
+              className="shrink-0 h-8 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded-full px-3 focus:outline-none focus:ring-1 focus:ring-blue-400 cursor-pointer appearance-none"
+            >
+              <option value="">{t("listings.filter.category")}</option>
+              {LISTING_CATEGORIES.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+
+            {/* Location */}
+            <input
+              type="text"
+              placeholder={t("listings.filter.location")}
+              value={filters.location}
+              onChange={(e) => setFilter("location", e.target.value)}
+              className="shrink-0 h-8 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded-full px-3 min-w-[110px] focus:outline-none focus:ring-1 focus:ring-blue-400 placeholder:text-gray-400"
+            />
           </div>
         </div>
       </div>
