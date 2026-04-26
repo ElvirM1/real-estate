@@ -384,9 +384,12 @@ export function AdminAccessModal({ open, onClose }: Props) {
                       onChange={(e) => setEmail(e.target.value)}
                       required
                       autoFocus
-                      className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white caret-white placeholder-white/30 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                      style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff', caretColor: '#ffffff' }}
-                      placeholder="admin@example.com"
+                      className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white caret-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      style={{
+                        color: "#ffffff",
+                        WebkitTextFillColor: "#ffffff",
+                        caretColor: "#ffffff",
+                      }}
                     />
                   </div>
                 </div>
@@ -404,9 +407,12 @@ export function AdminAccessModal({ open, onClose }: Props) {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
-                      className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white caret-white placeholder-white/30 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                      style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff', caretColor: '#ffffff' }}
-                      placeholder="••••••••"
+                      className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white caret-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      style={{
+                        color: "#ffffff",
+                        WebkitTextFillColor: "#ffffff",
+                        caretColor: "#ffffff",
+                      }}
                     />
                   </div>
                 </div>
