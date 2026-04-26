@@ -384,7 +384,8 @@ export function AdminAccessModal({ open, onClose }: Props) {
                       onChange={(e) => setEmail(e.target.value)}
                       required
                       autoFocus
-                      className="autofill-dark w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white caret-white placeholder-white/30 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white caret-white placeholder-white/30 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff', caretColor: '#ffffff' }}
                       placeholder="admin@example.com"
                     />
                   </div>
@@ -403,7 +404,8 @@ export function AdminAccessModal({ open, onClose }: Props) {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
-                      className="autofill-dark w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white caret-white placeholder-white/30 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white caret-white placeholder-white/30 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff', caretColor: '#ffffff' }}
                       placeholder="••••••••"
                     />
                   </div>
