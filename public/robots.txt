@@ -4,4 +4,4 @@ Allow: /
 # Block admin area from indexing
 Disallow: /admin
 
-Sitemap: https://adriatica.com/sitemap.xml
+Sitemap: https://www.adriaticarealestate.com/sitemap.xml

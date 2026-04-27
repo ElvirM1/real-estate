@@ -5,9 +5,7 @@ import { I18nProvider } from "@/components/I18nProvider";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  ),
+  metadataBase: new URL("https://www.adriaticarealestate.com"),
   title: {
     default: "Adriatica Real Estate",
     template: "%s | Adriatica Real Estate",
@@ -16,9 +14,17 @@ export const metadata: Metadata = {
     "Zbuloni pronat premium në Kosovë dhe rajon. Shtëpi, banesa dhe lokale për shitje dhe qira — Adriatica Real Estate.",
   keywords:
     "prona, patundshmëri, shitje, qira, banesë, shtëpi, Pejë, Kosovë, real estate",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  verification: {
+    google: "hpAcczZrR3V34s0PLpjmNh2Pos0JZiq8Q2dh3_FJQGA",
+  },
   openGraph: {
     title: "Adriatica Real Estate",
     description: "Zbuloni pronat premium — Adriatica Real Estate.",
+    url: "https://www.adriaticarealestate.com",
     type: "website",
     siteName: "Adriatica Real Estate",
     images: [
@@ -29,6 +35,12 @@ export const metadata: Metadata = {
         alt: "Adriatica Real Estate",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Adriatica Real Estate",
+    description: "Zbuloni pronat premium — Adriatica Real Estate.",
+    images: ["/og-image.png"],
   },
 };
 
